@@ -6,7 +6,7 @@
 # [x] scaling preserves ounces as well as grams
 # [x] 200 g + 300 g = 500 g
 # [x] plus retains both operands in an unevaluated Sum
-# [ ] 200 g + 1 oz, reduced to grams, using a conversion rate
+# [x] 200 g + 1 oz, reduced to grams, using a conversion rate
 # [ ] (200 g + 1 oz) x 2 (optional A8)
 
 from kitchen import Converter, Quantity, grams, ounces
