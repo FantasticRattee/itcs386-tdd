@@ -7,7 +7,8 @@
 # [x] 200 g + 300 g = 500 g
 # [x] plus retains both operands in an unevaluated Sum
 # [x] 200 g + 1 oz, reduced to grams, using a conversion rate
-# [ ] (200 g + 1 oz) x 2 (optional A8)
+# [x] (200 g + 1 oz) x 2 (optional A8)
+# Deferred: hashability for sets/dictionary keys; no current caller requires it.
 
 from kitchen import Converter, Quantity, grams, ounces
 
