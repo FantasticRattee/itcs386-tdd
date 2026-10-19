@@ -17,6 +17,8 @@ def test_1900_is_not_a_leap_year():
     (1900, False),  # หาร 100 ลงตัว แต่หาร 400 ไม่ลงตัว
     (2024, True),   # หาร 4 ลงตัว แต่หาร 100 ไม่ลงตัว
     (2023, False),  # หาร 4 ไม่ลงตัว
+    (2028, True),   # Additional case: divisible by 4 but not by 100
+    (2100, False),  # Additional case: divisible by 100 but not by 400
 ])
 def test_is_leap(year, expected):
     assert is_leap(year) == expected
