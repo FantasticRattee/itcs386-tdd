@@ -7,8 +7,9 @@ into this public repository.
 ## Current status and collaboration
 
 The code and tests for Part 0 and Part A (including optional A8) are complete:
-42 tests pass. Part B's personal reflection is awaiting the student's responses
-and review; do not treat the code-only state as the complete submission.
+42 tests pass. [REFLECTION.md](REFLECTION.md) is a draft containing the student's
+confirmed learning note and measured facts for Question 1. Personal responses to
+Questions 2-6 still await discussion and review; the submission is not complete.
 
 The student and an AI assistant worked through this lab together. The student
 entered and ran the early Part 0 examples while receiving explanations; after
@@ -40,7 +41,7 @@ On Windows, use `python` instead of `python3`, and activate with
 | Part 0: account / fixtures / decimals | `bank.py` | `test_bank.py` (7 cases) |
 | Part 0: shipping bug hunt | `shipping.py` | `test_shipping.py` (14 cases) |
 | Part A: quantities / expressions / conversion | `kitchen.py` | `test_kitchen.py` (11 tests) |
-| Part B: personal reflection | Not applicable | `REFLECTION.md` (pending student input) |
+| Part B: personal reflection | Not applicable | `REFLECTION.md` (draft; Questions 2-6 pending) |
 
 Additional supporting files are `requirements.txt`, `.gitignore`,
 [DEPENDENCIES.md](DEPENDENCIES.md), [TDD_HISTORY.md](TDD_HISTORY.md) and the

@@ -7,8 +7,9 @@ impact-check workflow uses it to keep code, tests and handoff documentation alig
 
 - Canonical production code: `leap.py`, `bank.py`, `shipping.py`, `kitchen.py`.
 - Canonical checks: matching `test_*.py` modules; all tests run with pytest.
-- Live overview: `README.md`. `REFLECTION.md` awaits the student's own answers,
-  not invented experience. `TDD_HISTORY.md` and `evidence/tdd_runs.json` index
+- Live overview: `README.md`. `REFLECTION.md` is a draft with one confirmed
+  learning note and measured Q1 facts; Q2-Q6 await the student's own answers.
+  `TDD_HISTORY.md` and `evidence/tdd_runs.json` index
   observed runs.
 - No diagrams, generated code, external services, database or embedded figures.
 
@@ -33,6 +34,7 @@ directional conversion-rate table and is passed into expression reduction.
 
 Part 0 and Part A through optional A8 are implemented and 42 tests pass.
 Personal reflection remains pending student input/review; do not label the whole
-submission complete until it is present. Counts in README and reflection must be
+submission complete until all six responses are complete and reviewed. Counts in
+README and reflection must be
 recomputed whenever tests or production code change.
 Original worksheet PDFs are read-only references outside the public repository.
