@@ -4,7 +4,8 @@
 # [x] two quantities with the same amount and unit are equal
 # [x] 1 oz is not the same as 1 g
 # [x] scaling preserves ounces as well as grams
-# [ ] 200 g + 300 g = 500 g
+# [x] 200 g + 300 g = 500 g
+# [x] plus retains both operands in an unevaluated Sum
 # [ ] 200 g + 1 oz, reduced to grams, using a conversion rate
 # [ ] (200 g + 1 oz) x 2 (optional A8)
 
