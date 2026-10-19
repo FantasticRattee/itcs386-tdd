@@ -54,3 +54,8 @@ def test_plus_returns_an_unevaluated_sum():
     assert isinstance(total, Sum)
     assert total.left is left
     assert total.right is right
+
+
+def test_reduce_same_unit_needs_no_rate():
+    converter = Converter()
+    assert converter.reduce(grams(500), "g") == grams(500)
