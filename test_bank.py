@@ -44,4 +44,4 @@ def test_two_withdrawals_reduce_balance(account):
 
 def test_interest(account):
     account.add_interest(0.10)
-    assert account.balance == 110
+    assert account.balance == pytest.approx(110)
