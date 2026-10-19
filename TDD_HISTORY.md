@@ -92,4 +92,3 @@ git show <commit>:kitchen.py
 RED snapshots intentionally contain incomplete or failing code. Use the current
 branch tip for the completed implementation. Do not run old snapshots expecting
 them all to pass.
-
