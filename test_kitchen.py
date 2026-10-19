@@ -42,3 +42,14 @@ def test_simple_addition():
     total = grams(200).plus(grams(300))
     converter = Converter()
     assert converter.reduce(total, "g") == grams(500)
+
+
+def test_plus_returns_an_unevaluated_sum():
+    from kitchen import Sum
+
+    left = grams(200)
+    right = grams(300)
+    total = left.plus(right)
+    assert isinstance(total, Sum)
+    assert total.left is left
+    assert total.right is right
