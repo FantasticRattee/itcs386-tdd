@@ -28,3 +28,8 @@ def test_is_leap(year, expected):
 def test_year_zero_is_rejected():
     with pytest.raises(ValueError, match="1 or later"):
         is_leap(0)
+
+
+def test_negative_year_is_rejected():
+    with pytest.raises(ValueError, match="1 or later"):
+        is_leap(-1)
