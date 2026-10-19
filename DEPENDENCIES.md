@@ -5,11 +5,11 @@ impact-check workflow uses it to keep code, tests and handoff documentation alig
 
 ## Artifact inventory
 
-- Canonical production code: `leap.py`, `bank.py`; `shipping.py` and `kitchen.py`
-  are being added during the authorized lab completion.
+- Canonical production code: `leap.py`, `bank.py`, `shipping.py`, `kitchen.py`.
 - Canonical checks: matching `test_*.py` modules; all tests run with pytest.
-- Live overview: `README.md`. `REFLECTION.md` will contain the student's own
-  answers, not invented experience. `TDD_HISTORY.md` will index observed runs.
+- Live overview: `README.md`. `REFLECTION.md` awaits the student's own answers,
+  not invented experience. `TDD_HISTORY.md` and `evidence/tdd_runs.json` index
+  observed runs.
 - No diagrams, generated code, external services, database or embedded figures.
 
 ## Impact matrix
@@ -31,6 +31,8 @@ directional conversion-rate table and is passed into expression reduction.
 
 ## Known sync debts
 
-The initial checkout contains partially completed Part 0 work only. Shipping,
-Kitchen, remaining tests and personal reflection are not complete at this checkpoint.
+Part 0 and Part A through optional A8 are implemented and 42 tests pass.
+Personal reflection remains pending student input/review; do not label the whole
+submission complete until it is present. Counts in README and reflection must be
+recomputed whenever tests or production code change.
 Original worksheet PDFs are read-only references outside the public repository.

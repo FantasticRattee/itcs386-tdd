@@ -218,3 +218,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Machine-local editor state and Finder metadata
+/.vscode/
+.DS_Store

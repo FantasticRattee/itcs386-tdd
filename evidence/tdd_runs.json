@@ -1,0 +1,387 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-19T17:48:13.628Z",
+  "provenance": "Observed command results from this assisted completion session; timestamps are UTC. Machine-specific paths in output were replaced with portable labels. No backdated commits or invented test runs.",
+  "shipping_specification_docstring_sha256": "69f21e3a8eb3fad895807c52d747d467400158ec973ac92620ff0f20af1c0bee",
+  "runs": [
+    {
+      "label": "0.3 GREEN: six parametrized leap-year inputs",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 0,
+      "output": ".............                                                            [100%]\n13 passed in 0.01s\n",
+      "commit": "18b96a8",
+      "started_at": "2026-10-19T17:41:43.051Z",
+      "completed_at": "2026-10-19T17:41:43.440Z"
+    },
+    {
+      "label": "0.4 GREEN: negative years rejected",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 0,
+      "output": "..............                                                           [100%]\n14 passed in 0.01s\n",
+      "commit": "e641e77",
+      "started_at": "2026-10-19T17:41:43.443Z",
+      "completed_at": "2026-10-19T17:41:43.769Z"
+    },
+    {
+      "label": "0.5 GREEN: all six fixture-based bank cases",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 0,
+      "output": "................                                                         [100%]\n16 passed in 0.01s\n",
+      "commit": "2a30709",
+      "started_at": "2026-10-19T17:41:43.772Z",
+      "completed_at": "2026-10-19T17:41:44.108Z"
+    },
+    {
+      "label": "0.6 RED: exact float comparison exposes rounding",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 1,
+      "output": "......F..........                                                        [100%]\n=================================== FAILURES ===================================\n________________________________ test_interest _________________________________\n\naccount = <bank.BankAccount object at 0x1093d5f20>\n\n    def test_interest(account):\n        account.add_interest(0.10)\n>       assert account.balance == 110\nE       assert 110.00000000000001 == 110\nE        +  where 110.00000000000001 = <bank.BankAccount object at 0x1093d5f20>.balance\n\ntest_bank.py:47: AssertionError\n=========================== short test summary info ============================\nFAILED test_bank.py::test_interest - assert 110.00000000000001 == 110\n1 failed, 16 passed in 0.01s\n",
+      "commit": "ee8dad8",
+      "started_at": "2026-10-19T17:41:44.111Z",
+      "completed_at": "2026-10-19T17:41:44.446Z"
+    },
+    {
+      "label": "0.6 GREEN targeted: rerun last failure",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest --lf -q",
+      "exit_code": 0,
+      "output": ".                                                                        [100%]\n1 passed in 0.00s\n",
+      "commit": null,
+      "started_at": "2026-10-19T17:41:44.449Z",
+      "completed_at": "2026-10-19T17:41:44.606Z"
+    },
+    {
+      "label": "0.6 GREEN: approximate decimal comparison",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 0,
+      "output": ".................                                                        [100%]\n17 passed in 0.01s\n",
+      "commit": "3a11768",
+      "started_at": "2026-10-19T17:41:44.606Z",
+      "completed_at": "2026-10-19T17:41:44.932Z"
+    },
+    {
+      "label": "0.7 GREEN: quiet",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 0,
+      "output": ".................                                                        [100%]\n17 passed in 0.01s\n",
+      "commit": null,
+      "started_at": "2026-10-19T17:42:16.468Z",
+      "completed_at": "2026-10-19T17:42:16.679Z"
+    },
+    {
+      "label": "0.7 GREEN: verbose",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -v",
+      "exit_code": 0,
+      "output": "============================= test session starts ==============================\nplatform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- ./.venv/bin/python\ncachedir: .pytest_cache\nrootdir: .\ncollecting ... collected 17 items\n\ntest_bank.py::test_deposit_increases_balance PASSED                      [  5%]\ntest_bank.py::test_withdraw_more_than_balance_is_refused PASSED          [ 11%]\ntest_bank.py::test_each_test_gets_a_fresh_account PASSED                 [ 17%]\ntest_bank.py::test_deposit_zero_is_rejected PASSED                       [ 23%]\ntest_bank.py::test_withdraw_whole_balance_leaves_zero PASSED             [ 29%]\ntest_bank.py::test_two_withdrawals_reduce_balance PASSED                 [ 35%]\ntest_bank.py::test_interest PASSED                                       [ 41%]\ntest_leap.py::test_2024_is_a_leap_year PASSED                            [ 47%]\ntest_leap.py::test_1900_is_not_a_leap_year PASSED                        [ 52%]\ntest_leap.py::test_is_leap[2000-True] PASSED                             [ 58%]\ntest_leap.py::test_is_leap[1900-False] PASSED                            [ 64%]\ntest_leap.py::test_is_leap[2024-True] PASSED                             [ 70%]\ntest_leap.py::test_is_leap[2023-False] PASSED                            [ 76%]\ntest_leap.py::test_is_leap[2028-True] PASSED                             [ 82%]\ntest_leap.py::test_is_leap[2100-False] PASSED                            [ 88%]\ntest_leap.py::test_year_zero_is_rejected PASSED                          [ 94%]\ntest_leap.py::test_negative_year_is_rejected PASSED                      [100%]\n\n============================== 17 passed in 0.01s ==============================\n",
+      "commit": null,
+      "started_at": "2026-10-19T17:42:16.679Z",
+      "completed_at": "2026-10-19T17:42:16.845Z"
+    },
+    {
+      "label": "0.7 GREEN: stop on failure",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -x -q",
+      "exit_code": 0,
+      "output": ".................                                                        [100%]\n17 passed in 0.01s\n",
+      "commit": null,
+      "started_at": "2026-10-19T17:42:16.845Z",
+      "completed_at": "2026-10-19T17:42:17.000Z"
+    },
+    {
+      "label": "0.7 GREEN: name filter",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -k leap -q",
+      "exit_code": 0,
+      "output": "..........                                                               [100%]\n10 passed, 7 deselected in 0.01s\n",
+      "commit": null,
+      "started_at": "2026-10-19T17:42:17.000Z",
+      "completed_at": "2026-10-19T17:42:17.160Z"
+    },
+    {
+      "label": "0.7 GREEN: last-failed selection",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest --lf -q",
+      "exit_code": 0,
+      "output": ".................                                                        [100%]\n17 passed in 0.01s\n",
+      "commit": "f30746f",
+      "started_at": "2026-10-19T17:42:17.160Z",
+      "completed_at": "2026-10-19T17:42:17.473Z"
+    },
+    {
+      "label": "0.8 RED: shipping exposes three specification defects",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 1,
+      "output": "...................F..F...F.F.F                                          [100%]\n=================================== FAILURES ===================================\n____________________ test_nonpositive_weight_is_rejected[0] ____________________\n\nweight_kg = 0\n\n    @pytest.mark.parametrize(\"weight_kg\", [-1, -0.1, 0])\n    def test_nonpositive_weight_is_rejected(weight_kg):\n>       with pytest.raises(ValueError, match=\"more than 0 kg\"):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE ValueError\n\ntest_shipping.py:9: Failed\n__________________ test_up_to_one_kilogram_costs_forty[1-40] ___________________\n\nweight_kg = 1, expected = 40\n\n    @pytest.mark.parametrize(\"weight_kg, expected\", [(0.1, 40), (0.5, 40), (1, 40)])\n    def test_up_to_one_kilogram_costs_forty(weight_kg, expected):\n>       assert shipping_fee(weight_kg) == expected\nE       assert 60 == 40\nE        +  where 60 = shipping_fee(1)\n\ntest_shipping.py:16: AssertionError\n___________ test_started_kilograms_above_five_are_rounded_up[5.2-70] ___________\n\nweight_kg = 5.2, expected = 70\n\n    @pytest.mark.parametrize(\"weight_kg, expected\", [\n        (5.2, 70),\n        (6, 70),\n        (6.1, 80),\n        (7, 80),\n        (10.5, 120),\n    ])\n    def test_started_kilograms_above_five_are_rounded_up(weight_kg, expected):\n>       assert shipping_fee(weight_kg) == expected\nE       assert 60 == 70\nE        +  where 60 = shipping_fee(5.2)\n\ntest_shipping.py:34: AssertionError\n___________ test_started_kilograms_above_five_are_rounded_up[6.1-80] ___________\n\nweight_kg = 6.1, expected = 80\n\n    @pytest.mark.parametrize(\"weight_kg, expected\", [\n        (5.2, 70),\n        (6, 70),\n        (6.1, 80),\n        (7, 80),\n        (10.5, 120),\n    ])\n    def test_started_kilograms_above_five_are_rounded_up(weight_kg, expected):\n>       assert shipping_fee(weight_kg) == expected\nE       assert 70 == 80\nE        +  where 70 = shipping_fee(6.1)\n\ntest_shipping.py:34: AssertionError\n__________ test_started_kilograms_above_five_are_rounded_up[10.5-120] __________\n\nweight_kg = 10.5, expected = 120\n\n    @pytest.mark.parametrize(\"weight_kg, expected\", [\n        (5.2, 70),\n        (6, 70),\n        (6.1, 80),\n        (7, 80),\n        (10.5, 120),\n    ])\n    def test_started_kilograms_above_five_are_rounded_up(weight_kg, expected):\n>       assert shipping_fee(weight_kg) == expected\nE       assert 110 == 120\nE        +  where 110 = shipping_fee(10.5)\n\ntest_shipping.py:34: AssertionError\n=========================== short test summary info ============================\nFAILED test_shipping.py::test_nonpositive_weight_is_rejected[0] - Failed: DID...\nFAILED test_shipping.py::test_up_to_one_kilogram_costs_forty[1-40] - assert 6...\nFAILED test_shipping.py::test_started_kilograms_above_five_are_rounded_up[5.2-70]\nFAILED test_shipping.py::test_started_kilograms_above_five_are_rounded_up[6.1-80]\nFAILED test_shipping.py::test_started_kilograms_above_five_are_rounded_up[10.5-120]\n5 failed, 26 passed in 0.02s\n",
+      "commit": "164effd",
+      "started_at": "2026-10-19T17:42:17.582Z",
+      "completed_at": "2026-10-19T17:42:17.921Z"
+    },
+    {
+      "label": "0.8 GREEN: original shipping specification satisfied",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 0,
+      "output": "...............................                                          [100%]\n31 passed in 0.01s\n",
+      "commit": "fcead01",
+      "started_at": "2026-10-19T17:42:17.924Z",
+      "completed_at": "2026-10-19T17:42:18.251Z"
+    },
+    {
+      "label": "A1 RED: first client before kitchen module exists",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 2,
+      "output": "\n==================================== ERRORS ====================================\n_______________________ ERROR collecting test_kitchen.py _______________________\nImportError while importing test module './test_kitchen.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n<python-stdlib>/importlib/__init__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntest_kitchen.py:10: in <module>\n    from kitchen import Quantity\nE   ModuleNotFoundError: No module named 'kitchen'\n=========================== short test summary info ============================\nERROR test_kitchen.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.04s\n",
+      "commit": "300ca3b",
+      "started_at": "2026-10-19T17:43:42.266Z",
+      "completed_at": "2026-10-19T17:43:42.629Z"
+    },
+    {
+      "label": "A1 GREEN: Fake It with the constant 600",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 0,
+      "output": "................................                                         [100%]\n32 passed in 0.01s\n",
+      "commit": "959ae40",
+      "started_at": "2026-10-19T17:43:42.633Z",
+      "completed_at": "2026-10-19T17:43:42.936Z"
+    },
+    {
+      "label": "A2 RED: second example rejects the fake constant",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 1,
+      "output": "........F........................                                        [100%]\n=================================== FAILURES ===================================\n__________________________ test_multiplication_by_two __________________________\n\n    def test_multiplication_by_two():\n        flour = Quantity(200)\n        flour.times(2)\n>       assert flour.amount == 400\nE       assert 600 == 400\nE        +  where 600 = <kitchen.Quantity object at 0x106d8bed0>.amount\n\ntest_kitchen.py:22: AssertionError\n=========================== short test summary info ============================\nFAILED test_kitchen.py::test_multiplication_by_two - assert 600 == 400\n1 failed, 32 passed in 0.02s\n",
+      "commit": "00ca6f7",
+      "started_at": "2026-10-19T17:43:42.941Z",
+      "completed_at": "2026-10-19T17:43:43.256Z"
+    },
+    {
+      "label": "A2 GREEN: general multiplication formula",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 0,
+      "output": ".................................                                        [100%]\n33 passed in 0.01s\n",
+      "commit": "9ec27db",
+      "started_at": "2026-10-19T17:43:43.260Z",
+      "completed_at": "2026-10-19T17:43:43.585Z"
+    },
+    {
+      "label": "A3 RED: return values and original quantity preservation",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 1,
+      "output": ".......FF........................                                        [100%]\n=================================== FAILURES ===================================\n_____________________________ test_multiplication ______________________________\n\n    def test_multiplication():\n        flour = Quantity(200)\n>       assert flour.times(3).amount == 600\n               ^^^^^^^^^^^^^^^^^^^^^\nE       AttributeError: 'NoneType' object has no attribute 'amount'\n\ntest_kitchen.py:15: AttributeError\n__________________ test_multiplication_returns_a_new_quantity __________________\n\n    def test_multiplication_returns_a_new_quantity():\n        flour = Quantity(200)\n        tripled = flour.times(3)\n>       assert tripled.amount == 600\n               ^^^^^^^^^^^^^^\nE       AttributeError: 'NoneType' object has no attribute 'amount'\n\ntest_kitchen.py:21: AttributeError\n=========================== short test summary info ============================\nFAILED test_kitchen.py::test_multiplication - AttributeError: 'NoneType' obje...\nFAILED test_kitchen.py::test_multiplication_returns_a_new_quantity - Attribut...\n2 failed, 31 passed in 0.02s\n",
+      "commit": "9f93ac0",
+      "started_at": "2026-10-19T17:43:43.588Z",
+      "completed_at": "2026-10-19T17:43:43.890Z"
+    },
+    {
+      "label": "A3 GREEN: return a new value object",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 0,
+      "output": ".................................                                        [100%]\n33 passed in 0.01s\n",
+      "commit": "be48107",
+      "started_at": "2026-10-19T17:43:43.894Z",
+      "completed_at": "2026-10-19T17:43:44.207Z"
+    },
+    {
+      "label": "A4 RED: contents must define equality",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 1,
+      "output": ".........F........................                                       [100%]\n=================================== FAILURES ===================================\n________________________________ test_equality _________________________________\n\n    def test_equality():\n>       assert Quantity(200) == Quantity(200)\nE       assert <kitchen.Quantity object at 0x1089a8a70> == <kitchen.Quantity object at 0x108932140>\nE        +  where <kitchen.Quantity object at 0x1089a8a70> = Quantity(200)\nE        +  and   <kitchen.Quantity object at 0x108932140> = Quantity(200)\n\ntest_kitchen.py:28: AssertionError\n=========================== short test summary info ============================\nFAILED test_kitchen.py::test_equality - assert <kitchen.Quantity object at 0x...\n1 failed, 33 passed in 0.02s\n",
+      "commit": "21c0537",
+      "started_at": "2026-10-19T17:43:44.210Z",
+      "completed_at": "2026-10-19T17:43:44.517Z"
+    },
+    {
+      "label": "A4 RED: fake equality caught by unequal amounts",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 1,
+      "output": ".........F........................                                       [100%]\n=================================== FAILURES ===================================\n________________________________ test_equality _________________________________\n\n    def test_equality():\n        assert Quantity(200) == Quantity(200)\n>       assert Quantity(200) != Quantity(300)\nE       assert <kitchen.Quantity object at 0x109202140> != <kitchen.Quantity object at 0x1091c3050>\nE        +  where <kitchen.Quantity object at 0x109202140> = Quantity(200)\nE        +  and   <kitchen.Quantity object at 0x1091c3050> = Quantity(300)\n\ntest_kitchen.py:29: AssertionError\n=========================== short test summary info ============================\nFAILED test_kitchen.py::test_equality - assert <kitchen.Quantity object at 0x...\n1 failed, 33 passed in 0.02s\n",
+      "commit": "1f72c52",
+      "started_at": "2026-10-19T17:43:44.520Z",
+      "completed_at": "2026-10-19T17:43:44.826Z"
+    },
+    {
+      "label": "A4 GREEN: compare amounts",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 0,
+      "output": "..................................                                       [100%]\n34 passed in 0.01s\n",
+      "commit": "ef2645e",
+      "started_at": "2026-10-19T17:43:44.829Z",
+      "completed_at": "2026-10-19T17:43:45.136Z"
+    },
+    {
+      "label": "A4 REFACTOR: earlier clients compare whole quantities",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 0,
+      "output": "..................................                                       [100%]\n34 passed in 0.01s\n",
+      "commit": "eaa2c00",
+      "started_at": "2026-10-19T17:43:45.139Z",
+      "completed_at": "2026-10-19T17:43:45.459Z"
+    },
+    {
+      "label": "A5 RED: quantities must carry and preserve units",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 1,
+      "output": ".......FFFFF........................                                     [100%]\n=================================== FAILURES ===================================\n_____________________________ test_multiplication ______________________________\n\n    def test_multiplication():\n>       flour = Quantity(200, \"g\")\n                ^^^^^^^^^^^^^^^^^^\nE       TypeError: Quantity.__init__() takes 2 positional arguments but 3 were given\n\ntest_kitchen.py:14: TypeError\n__________________ test_multiplication_returns_a_new_quantity __________________\n\n    def test_multiplication_returns_a_new_quantity():\n>       flour = Quantity(200, \"g\")\n                ^^^^^^^^^^^^^^^^^^\nE       TypeError: Quantity.__init__() takes 2 positional arguments but 3 were given\n\ntest_kitchen.py:19: TypeError\n________________________________ test_equality _________________________________\n\n    def test_equality():\n>       assert Quantity(200, \"g\") == Quantity(200, \"g\")\n               ^^^^^^^^^^^^^^^^^^\nE       TypeError: Quantity.__init__() takes 2 positional arguments but 3 were given\n\ntest_kitchen.py:28: TypeError\n__________________________ test_grams_are_not_ounces ___________________________\n\n    def test_grams_are_not_ounces():\n>       assert Quantity(1, \"g\") != Quantity(1, \"oz\")\n               ^^^^^^^^^^^^^^^^\nE       TypeError: Quantity.__init__() takes 2 positional arguments but 3 were given\n\ntest_kitchen.py:33: TypeError\n______________________ test_multiplication_preserves_unit ______________________\n\n    def test_multiplication_preserves_unit():\n>       assert Quantity(2, \"oz\").times(3) == Quantity(6, \"oz\")\n               ^^^^^^^^^^^^^^^^^\nE       TypeError: Quantity.__init__() takes 2 positional arguments but 3 were given\n\ntest_kitchen.py:37: TypeError\n=========================== short test summary info ============================\nFAILED test_kitchen.py::test_multiplication - TypeError: Quantity.__init__() ...\nFAILED test_kitchen.py::test_multiplication_returns_a_new_quantity - TypeErro...\nFAILED test_kitchen.py::test_equality - TypeError: Quantity.__init__() takes ...\nFAILED test_kitchen.py::test_grams_are_not_ounces - TypeError: Quantity.__ini...\nFAILED test_kitchen.py::test_multiplication_preserves_unit - TypeError: Quant...\n5 failed, 31 passed in 0.02s\n",
+      "commit": "e71d7f4",
+      "started_at": "2026-10-19T17:44:29.568Z",
+      "completed_at": "2026-10-19T17:44:29.884Z"
+    },
+    {
+      "label": "A5 GREEN: amount-and-unit value objects",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 0,
+      "output": "....................................                                     [100%]\n36 passed in 0.01s\n",
+      "commit": "9e57c53",
+      "started_at": "2026-10-19T17:44:29.887Z",
+      "completed_at": "2026-10-19T17:44:30.189Z"
+    },
+    {
+      "label": "A5 REFACTOR: unit factories simplify callers",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 0,
+      "output": "....................................                                     [100%]\n36 passed in 0.01s\n",
+      "commit": "e33dd1e",
+      "started_at": "2026-10-19T17:44:30.193Z",
+      "completed_at": "2026-10-19T17:44:30.530Z"
+    },
+    {
+      "label": "A6 RED: first addition client requests a converter",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 2,
+      "output": "\n==================================== ERRORS ====================================\n_______________________ ERROR collecting test_kitchen.py _______________________\nImportError while importing test module './test_kitchen.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n<python-stdlib>/importlib/__init__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntest_kitchen.py:11: in <module>\n    from kitchen import Converter, Quantity, grams, ounces\nE   ImportError: cannot import name 'Converter' from 'kitchen' (./kitchen.py)\n=========================== short test summary info ============================\nERROR test_kitchen.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.04s\n",
+      "commit": "71c8692",
+      "started_at": "2026-10-19T17:44:30.533Z",
+      "completed_at": "2026-10-19T17:44:30.873Z"
+    },
+    {
+      "label": "A6 GREEN: Fake It addition with 500 grams",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 0,
+      "output": ".....................................                                    [100%]\n37 passed in 0.01s\n",
+      "commit": "08e19f4",
+      "started_at": "2026-10-19T17:44:30.876Z",
+      "completed_at": "2026-10-19T17:44:31.198Z"
+    },
+    {
+      "label": "A6 RED: addition must retain an unevaluated plan",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 1,
+      "output": ".............F........................                                   [100%]\n=================================== FAILURES ===================================\n_____________________ test_plus_returns_an_unevaluated_sum _____________________\n\n    def test_plus_returns_an_unevaluated_sum():\n>       from kitchen import Sum\nE       ImportError: cannot import name 'Sum' from 'kitchen' (./kitchen.py)\n\ntest_kitchen.py:48: ImportError\n=========================== short test summary info ============================\nFAILED test_kitchen.py::test_plus_returns_an_unevaluated_sum - ImportError: c...\n1 failed, 37 passed in 0.02s\n",
+      "commit": "6988731",
+      "started_at": "2026-10-19T17:44:31.202Z",
+      "completed_at": "2026-10-19T17:44:31.528Z"
+    },
+    {
+      "label": "A6 RED: converter cannot yet reduce the new Sum",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 1,
+      "output": "............F.........................                                   [100%]\n=================================== FAILURES ===================================\n_____________________________ test_simple_addition _____________________________\n\n    def test_simple_addition():\n        total = grams(200).plus(grams(300))\n        converter = Converter()\n>       assert converter.reduce(total, \"g\") == grams(500)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\ntest_kitchen.py:44: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = Quantity(500, 'g'), other = <kitchen.Sum object at 0x10ae45a90>\n\n    def __eq__(self, other):\n>       return self.amount == other.amount and self.unit == other.unit\n                              ^^^^^^^^^^^^\nE       AttributeError: 'Sum' object has no attribute 'amount'\n\nkitchen.py:13: AttributeError\n=========================== short test summary info ============================\nFAILED test_kitchen.py::test_simple_addition - AttributeError: 'Sum' object h...\n1 failed, 37 passed in 0.02s\n",
+      "commit": "4a58af8",
+      "started_at": "2026-10-19T17:44:31.532Z",
+      "completed_at": "2026-10-19T17:44:31.856Z"
+    },
+    {
+      "label": "A6 GREEN: polymorphic reduction evaluates the plan",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 0,
+      "output": "......................................                                   [100%]\n38 passed in 0.02s\n",
+      "commit": "f828d47",
+      "started_at": "2026-10-19T17:44:31.860Z",
+      "completed_at": "2026-10-19T17:44:32.186Z"
+    },
+    {
+      "label": "A7 GREEN baseline: same-unit behavior already exists",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 0,
+      "output": ".......................................                                  [100%]\n39 passed in 0.02s\n",
+      "commit": "2b7f4b2",
+      "started_at": "2026-10-19T17:45:22.190Z",
+      "completed_at": "2026-10-19T17:45:22.515Z"
+    },
+    {
+      "label": "A7 RED oracle check: intentional wrong expected amount",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 1,
+      "output": "..............F........................                                  [100%]\n=================================== FAILURES ===================================\n_____________________ test_reduce_same_unit_needs_no_rate ______________________\n\n    def test_reduce_same_unit_needs_no_rate():\n        converter = Converter()\n>       assert converter.reduce(grams(500), \"g\") == grams(501)\nE       AssertionError: assert Quantity(500, 'g') == Quantity(501, 'g')\nE        +  where Quantity(500, 'g') = reduce(Quantity(500, 'g'), 'g')\nE        +    where reduce = <kitchen.Converter object at 0x10889bd90>.reduce\nE        +    and   Quantity(500, 'g') = grams(500)\nE        +  and   Quantity(501, 'g') = grams(501)\n\ntest_kitchen.py:61: AssertionError\n=========================== short test summary info ============================\nFAILED test_kitchen.py::test_reduce_same_unit_needs_no_rate - AssertionError:...\n1 failed, 38 passed in 0.02s\n",
+      "commit": "745be5a",
+      "started_at": "2026-10-19T17:45:22.518Z",
+      "completed_at": "2026-10-19T17:45:22.837Z"
+    },
+    {
+      "label": "A7 GREEN oracle check: restore the correct expectation",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 0,
+      "output": ".......................................                                  [100%]\n39 passed in 0.02s\n",
+      "commit": "8d141ae",
+      "started_at": "2026-10-19T17:45:22.840Z",
+      "completed_at": "2026-10-19T17:45:23.159Z"
+    },
+    {
+      "label": "A7 RED: mixed-unit addition needs a rate API",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 1,
+      "output": "...............F........................                                 [100%]\n=================================== FAILURES ===================================\n_____________________________ test_mixed_addition ______________________________\n\n    def test_mixed_addition():\n        converter = Converter()\n>       converter.add_rate(\"oz\", \"g\", 28)\n        ^^^^^^^^^^^^^^^^^^\nE       AttributeError: 'Converter' object has no attribute 'add_rate'\n\ntest_kitchen.py:66: AttributeError\n=========================== short test summary info ============================\nFAILED test_kitchen.py::test_mixed_addition - AttributeError: 'Converter' obj...\n1 failed, 39 passed in 0.02s\n",
+      "commit": "c701445",
+      "started_at": "2026-10-19T17:45:23.162Z",
+      "completed_at": "2026-10-19T17:45:23.491Z"
+    },
+    {
+      "label": "A7 RED: empty add_rate exposes the incorrect raw total 201",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 1,
+      "output": "...............F........................                                 [100%]\n=================================== FAILURES ===================================\n_____________________________ test_mixed_addition ______________________________\n\n    def test_mixed_addition():\n        converter = Converter()\n        converter.add_rate(\"oz\", \"g\", 28)\n        total = grams(200).plus(ounces(1))\n>       assert converter.reduce(total, \"g\") == grams(228)\nE       AssertionError: assert Quantity(201, 'g') == Quantity(228, 'g')\nE        +  where Quantity(201, 'g') = reduce(<kitchen.Sum object at 0x10af0bed0>, 'g')\nE        +    where reduce = <kitchen.Converter object at 0x10af0bd90>.reduce\nE        +  and   Quantity(228, 'g') = grams(228)\n\ntest_kitchen.py:68: AssertionError\n=========================== short test summary info ============================\nFAILED test_kitchen.py::test_mixed_addition - AssertionError: assert Quantity...\n1 failed, 39 passed in 0.02s\n",
+      "commit": "e80d378",
+      "started_at": "2026-10-19T17:45:23.494Z",
+      "completed_at": "2026-10-19T17:45:23.820Z"
+    },
+    {
+      "label": "A7 RED: storing rates alone cannot fix raw addition",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 1,
+      "output": "...............F........................                                 [100%]\n=================================== FAILURES ===================================\n_____________________________ test_mixed_addition ______________________________\n\n    def test_mixed_addition():\n        converter = Converter()\n        converter.add_rate(\"oz\", \"g\", 28)\n        total = grams(200).plus(ounces(1))\n>       assert converter.reduce(total, \"g\") == grams(228)\nE       AssertionError: assert Quantity(201, 'g') == Quantity(228, 'g')\nE        +  where Quantity(201, 'g') = reduce(<kitchen.Sum object at 0x10879fed0>, 'g')\nE        +    where reduce = <kitchen.Converter object at 0x10879fd90>.reduce\nE        +  and   Quantity(228, 'g') = grams(228)\n\ntest_kitchen.py:68: AssertionError\n=========================== short test summary info ============================\nFAILED test_kitchen.py::test_mixed_addition - AssertionError: assert Quantity...\n1 failed, 39 passed in 0.02s\n",
+      "commit": "9c7481b",
+      "started_at": "2026-10-19T17:45:23.823Z",
+      "completed_at": "2026-10-19T17:45:24.148Z"
+    },
+    {
+      "label": "A7 RED: converter travels through reduction",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 1,
+      "output": "...............F........................                                 [100%]\n=================================== FAILURES ===================================\n_____________________________ test_mixed_addition ______________________________\n\n    def test_mixed_addition():\n        converter = Converter()\n        converter.add_rate(\"oz\", \"g\", 28)\n        total = grams(200).plus(ounces(1))\n>       assert converter.reduce(total, \"g\") == grams(228)\nE       AssertionError: assert Quantity(201, 'g') == Quantity(228, 'g')\nE        +  where Quantity(201, 'g') = reduce(<kitchen.Sum object at 0x1092d3ed0>, 'g')\nE        +    where reduce = <kitchen.Converter object at 0x1092d3d90>.reduce\nE        +  and   Quantity(228, 'g') = grams(228)\n\ntest_kitchen.py:68: AssertionError\n=========================== short test summary info ============================\nFAILED test_kitchen.py::test_mixed_addition - AssertionError: assert Quantity...\n1 failed, 39 passed in 0.02s\n",
+      "commit": "54814b3",
+      "started_at": "2026-10-19T17:45:24.151Z",
+      "completed_at": "2026-10-19T17:45:24.455Z"
+    },
+    {
+      "label": "A7 GREEN: reduce both operands before adding",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 0,
+      "output": "........................................                                 [100%]\n40 passed in 0.02s\n",
+      "commit": "1ad5082",
+      "started_at": "2026-10-19T17:45:24.458Z",
+      "completed_at": "2026-10-19T17:45:24.769Z"
+    },
+    {
+      "label": "A7 GREEN: direction regression rejects divide-instead-of-multiply",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 0,
+      "output": ".........................................                                [100%]\n41 passed in 0.02s\n",
+      "commit": "da2da18",
+      "started_at": "2026-10-19T17:45:24.772Z",
+      "completed_at": "2026-10-19T17:45:25.098Z"
+    },
+    {
+      "label": "A8 RED optional: scale a deferred mixed-unit sum",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 1,
+      "output": ".................F........................                               [100%]\n=================================== FAILURES ===================================\n________________________________ test_sum_times ________________________________\n\n    def test_sum_times():\n        converter = Converter()\n        converter.add_rate(\"oz\", \"g\", 28)\n>       total = grams(200).plus(ounces(1)).times(2)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       AttributeError: 'Sum' object has no attribute 'times'\n\ntest_kitchen.py:80: AttributeError\n=========================== short test summary info ============================\nFAILED test_kitchen.py::test_sum_times - AttributeError: 'Sum' object has no ...\n1 failed, 41 passed in 0.02s\n",
+      "commit": "8368f6b",
+      "started_at": "2026-10-19T17:45:25.102Z",
+      "completed_at": "2026-10-19T17:45:25.405Z"
+    },
+    {
+      "label": "A8 GREEN optional: scale each operand without mutation",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 0,
+      "output": "..........................................                               [100%]\n42 passed in 0.02s\n",
+      "commit": "f1af532",
+      "started_at": "2026-10-19T17:45:25.409Z",
+      "completed_at": "2026-10-19T17:45:25.723Z"
+    }
+  ]
+}
+
