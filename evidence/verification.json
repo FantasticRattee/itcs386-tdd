@@ -1,0 +1,50 @@
+{
+  "verified_on": "2026-10-20",
+  "timezone": "Asia/Bangkok",
+  "status": "code_complete_personal_reflection_pending",
+  "code_snapshot_commit": "f1af532",
+  "runtime": {
+    "python": "3.14.6",
+    "pytest": "9.1.1"
+  },
+  "results": {
+    "original_workspace": "42 passed",
+    "independent_code_review": "no worksheet-scope blockers",
+    "history_replay": {
+      "lab_step_commits": 37,
+      "matching_expected_exit": 37,
+      "mismatches": 0
+    },
+    "fresh_local_clone_and_new_venv": {
+      "install_source": "https://pypi.org/simple",
+      "requirements_file": "requirements.txt",
+      "pytest": "42 passed",
+      "pip_check": "No broken requirements found."
+    },
+    "staged_scrub": "no secrets, machine paths or forbidden environment files found"
+  },
+  "counts": {
+    "part0_cases": 31,
+    "partA_tests": 11,
+    "total_cases": 42,
+    "kitchen_physical_lines": 57,
+    "kitchen_nonblank_noncomment_lines": 39,
+    "tests_per_production_sloc": 0.28205128205128205
+  },
+  "source_file_sha256": {
+    "leap.py": "9daa66dd6c3d07dd512df6c11eee60201eac758843df58346848ceb9f257a9c9",
+    "bank.py": "923e1aa7e5a4f4fed66007b6de8927f75f2f08c86a8661454fcf5019414f1401",
+    "shipping.py": "a0bfe2220965383a6aa27cadc5f43409db91e55b901d98c63f32805b90790163",
+    "kitchen.py": "84e7297fe6e9ecb0b28bc79eb8013acc4bb83047e47a6a6e8c0bbf7b9a7511df",
+    "test_leap.py": "6b6ff18fdc1abfdd71397eab0439734c86d42f05ba2602297b32e911f2fbf0be",
+    "test_bank.py": "b0bcb126e1d39c30a0193aa54c80378e773b5ae62a52b9a840ca97d9c577e19d",
+    "test_shipping.py": "d265d98d97967fe64bede89f91231385cfc8a6d87b07b8107d07f6102617ddc8",
+    "test_kitchen.py": "c5c31b8cb0a6b6d65a7f81c1b82053ea9b92bde7165a1b2c2557f52dad21afaa"
+  },
+  "not_done": [
+    "Personal REFLECTION.md awaits student answers/review.",
+    "No final submission ZIP packaged while reflection is missing.",
+    "No push to GitHub and no submission to MyCourses performed."
+  ]
+}
+
