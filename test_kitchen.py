@@ -59,3 +59,10 @@ def test_plus_returns_an_unevaluated_sum():
 def test_reduce_same_unit_needs_no_rate():
     converter = Converter()
     assert converter.reduce(grams(500), "g") == grams(500)
+
+
+def test_mixed_addition():
+    converter = Converter()
+    converter.add_rate("oz", "g", 28)
+    total = grams(200).plus(ounces(1))
+    assert converter.reduce(total, "g") == grams(228)
