@@ -7,9 +7,8 @@ into this public repository.
 ## Current status and collaboration
 
 The code and tests for Part 0 and Part A (including optional A8) are complete:
-42 tests pass. [REFLECTION.md](REFLECTION.md) is a draft containing the student's
-confirmed learning note and measured facts for Question 1. Personal responses to
-Questions 2-6 still await discussion and review; the submission is not complete.
+42 tests pass. [REFLECTION.md](REFLECTION.md) answers all six Part B questions
+concisely, using the lab results and our discussion.
 
 The student and an AI assistant worked through this lab together. The student
 entered and ran the early Part 0 examples while receiving explanations; after
@@ -41,7 +40,7 @@ On Windows, use `python` instead of `python3`, and activate with
 | Part 0: account / fixtures / decimals | `bank.py` | `test_bank.py` (7 cases) |
 | Part 0: shipping bug hunt | `shipping.py` | `test_shipping.py` (14 cases) |
 | Part A: quantities / expressions / conversion | `kitchen.py` | `test_kitchen.py` (11 tests) |
-| Part B: personal reflection | Not applicable | `REFLECTION.md` (draft; Questions 2-6 pending) |
+| Part B: personal reflection | Not applicable | `REFLECTION.md` (six answers) |
 
 Additional supporting files are `requirements.txt`, `.gitignore`,
 [DEPENDENCIES.md](DEPENDENCIES.md), [TDD_HISTORY.md](TDD_HISTORY.md) and the
@@ -83,7 +82,7 @@ The worksheet (pages 1 and 17) requires ONE repository named `itcs386-tdd`.
 Keep the exact module/test filenames above and `REFLECTION.md`. It does not give
 a student-ID prefix or a mandatory ZIP filename; do not rename importable modules.
 
-After finishing/reviewing the reflection, submit either:
+Submit either:
 
 1. The updated public repository link on MyCourses. Ensure the completed local
    commits have been pushed and are visible before submitting the URL.
@@ -93,8 +92,8 @@ After finishing/reviewing the reflection, submit either:
    `.vscode/`, `__pycache__/` and `.pytest_cache/`.
 
 Repository: <https://github.com/FantasticRattee/itcs386-tdd>.
-Completion work is local until an explicit push is performed. No MyCourses
-submission was made by the assistant. The PDF gives no calendar deadline: check
+No GitHub push or MyCourses submission was made by the assistant.
+The PDF gives no calendar deadline: check
 the actual MyCourses assignment for its deadline and any additional instructions.
 
 ## Deliberate scope limits

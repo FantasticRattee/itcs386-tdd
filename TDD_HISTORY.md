@@ -79,8 +79,8 @@ The final code was also cloned into a separate directory, given a new virtual
 environment and dependencies installed from official PyPI via requirements.txt.
 That fresh copy passed all 42 tests and pip check. See
 [evidence/verification.json](evidence/verification.json) for the bounded results
-and source hashes. The reflection draft contains a student-confirmed learning
-note and measured Q1 facts; Q2-Q6 still await the student's responses/review.
+and source hashes. The completed reflection answers all six questions concisely,
+using measured counts, the recorded steps and the student's explanation of tests.
 
 ## Reading the history
 
