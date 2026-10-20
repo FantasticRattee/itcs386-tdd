@@ -7,9 +7,9 @@ comments. The ratio is 11:39, or about one test per 3.55 lines.
 
 ## 2. The longest red bar
 
-I cannot say exactly which red bar lasted longest. One difficulty was understanding
-why `if` conditions still needed tests. I had to separate the logic that produces
-an answer from a test that checks it against an expected output.
+I am not sure which red bar lasted longest because I did not time it. I think A7
+was the hardest part because mixed-unit addition needed changes in `Converter`,
+`Quantity.reduce` and `Sum.reduce`.
 
 ## 3. Fake It, Triangulate and Obvious Implementation
 
